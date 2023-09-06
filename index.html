@@ -4,67 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Suzan Bülbül | Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/style.css" />
     <link rel="icon" type="x-icon" href="assets/myphoto.jpeg">
+    <script src="data.js"></script>
   </head>
   <body>
+    <a href="" target="_blank"></a>
     <div class="container">
       <h1 class="title">My Projects</h1>
-
-      <div class="project">
-        <h2>Clothing Web Site</h2>
-        <h3>NuxtJS & SCSS & Strapi</h3>
-        <p>
-          WEB SİTE UI:
-          <a href="https://github.com/suzanbulbul/web-site-ui"
-            >https://github.com/suzanbulbul/web-site-ui</a
-          >
-        </p>
-        <p>
-          WEB SİTE API:
-          <a href="https://github.com/suzanbulbul/web-site-api"
-            >https://github.com/suzanbulbul/web-site-api</a
-          >
-        </p>
-      </div>
-      <div class="project">
-        <h2>Landing Page</h2>
-        <h3>VueJS & SCSS</h3>
-        <p>
-          Live URL:
-          <a href="https://suzanbulbul.github.io/product-landing-page/tr/"
-            >https://suzanbulbul.github.io/product-landing-page/tr/</a
-          >
-        </p>
-
-        <p>
-          Landing Page Code :
-          <a href="https://github.com/suzanbulbul/product-landing-page"
-            >https://github.com/suzanbulbul/product-landing-page</a
-          >
-        </p>
-      </div>
-      <div class="project">
-        <h2>Amazon Clone</h2>
-        <h3>VueJS & MongoDB</h3>
-        <p>
-          API:
-          <a href="https://github.com/suzanbulbul/amazon-clone-admin-ui"
-            >https://github.com/suzanbulbul/amazon-clone-admin-ui</a
-          >
-        </p>
-        <p>
-          Admin UI:
-          <a href="https://github.com/suzanbulbul/amazon-clone-admin-ui"
-            >https://github.com/suzanbulbul/amazon-clone-admin-ui</a
-          >
-        </p>
-        <p>
-          Client UI:
-          <a href="https://github.com/suzanbulbul/amazon-clone-client-ui"
-            >https://github.com/suzanbulbul/amazon-clone-client-ui</a
-          >
-        </p>
+      <div class="row">
+        <script>
+          const projectsContainer = document.querySelector(".row");
+        
+          projects.forEach((project) => {
+            const card = document.createElement("div");
+            card.classList.add("col-md-6", "col-sm-12", "p-20");
+            card.innerHTML = `
+              <div class="card">
+                <div class="card-body">
+                  <div>
+                    <h5 class="card-title">${project.title}</h5>
+                    <h6 class="card-label">${project.technologiesUsed}</h6>
+                    <p class="card-desc">${project.description}</p>
+                  </div>
+                  <div class="card-url">
+                    <a href="${project.githubRepository}" target="_blank" class="link-secondary">GitHub Repository</a>
+                    ${project.liveURL ? `<a href="${project.liveURL}" target="_blank" class="link-primary">Live Demo</a>` : ''}
+                    ${project.githubRepositoryApi ? `<a href="${project.githubRepositoryApi}" target="_blank" class="link-primary">GitHub Api</a>` : ''}
+                  </div>
+                </div>
+              </div>
+            `;
+        
+            projectsContainer.appendChild(card);
+          });
+        </script>
       </div>
     </div>
   </body>
