@@ -11,37 +11,48 @@
     <script src="data.js"></script>
   </head>
   <body>
-    <a href="" target="_blank"></a>
-    <div class="container">
-      <h1 class="title">My Projects</h1>
-      <div class="row">
-        <script>
-          const projectsContainer = document.querySelector(".row");
-        
-          projects.forEach((project) => {
-            const card = document.createElement("div");
-            card.classList.add("col-md-6", "col-sm-12", "p-20");
-            card.innerHTML = `
-              <div class="card">
-                <div class="card-body">
-                  <div>
-                    <h5 class="card-title">${project.title}</h5>
-                    <h6 class="card-label">${project.technologiesUsed}</h6>
-                    <p class="card-desc">${project.description}</p>
-                  </div>
-                  <div class="card-url">
-                    <a href="${project.githubRepository}" target="_blank" class="link-secondary">GitHub Repository</a>
-                    ${project.liveURL ? `<a href="${project.liveURL}" target="_blank" class="link-primary">Live Demo</a>` : ''}
-                    ${project.githubRepositoryApi ? `<a href="${project.githubRepositoryApi}" target="_blank" class="link-primary">GitHub Api</a>` : ''}
+    <header class="header">
+      <div class="container">
+        <div class="d-flex justify-content-start align-items-center">
+          <a href="/" class="title">My Projects</a>
+          <ul>
+            <li >
+              <a class="nav-item" target="_blank" href="https://suzanbulbul.github.io/">Who am I?</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <section class="main">
+      <section class="container">
+        <div class="row">
+          <script>
+            const projectsContainer = document.querySelector(".row");
+            projects.forEach((project) => {
+              const card = document.createElement("div");
+              card.classList.add("col-md-6", "col-sm-12", "p-20");
+              card.innerHTML = `
+                <div class="card">
+                  ${project.img ? `<a href="${project.liveURL}" target="_blank"><img src=${project.img} class="card-img" alt="${project.title} image"></a>` : ''}
+                  <div class="card-body">
+                    <div>
+                      <h5 class="card-title">${project.title}</h5>
+                      <h6 class="card-label">${project.technologiesUsed}</h6>
+                      <p class="card-desc">${project.description}</p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <a href="${project.liveURL ? project.liveURL : project.githubRepositoryApi}" target="_blank" class="link-secondary">${project.liveURL ? "Live URL" : "GitHub Api"}</a>
+                      ${project.githubRepository ? `<a href="${project.githubRepository}" target="_blank" class="link-primary">GitHub Repository</a>` : ''}
+                    </div>
                   </div>
                 </div>
-              </div>
-            `;
-        
-            projectsContainer.appendChild(card);
-          });
-        </script>
-      </div>
-    </div>
+              `;
+          
+              projectsContainer.appendChild(card);
+            });
+          </script>
+        </div>
+      </section>
+    </section>
   </body>
 </html>
