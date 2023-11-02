@@ -120,6 +120,16 @@ header .nav-item:after {
   font-weight: 700;
   margin-bottom: 20px;
 }
+.card-url{
+  font-size: 16px;
+  color: #ef7734;
+  font-style: normal;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.card-url:hover{
+  text-decoration: underline;
+}
 
 /* Button */
 .link-primary{
