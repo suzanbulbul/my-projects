@@ -13,6 +13,15 @@ const projects = [
     backendRepository: "https://github.com/suzanbulbul/lc-waikiki-api",
   },
   {
+    title: "Wofdex Cripto",
+    description:
+      "Wofdex, developed during my first job experience, is a user-friendly crypto application designed for easy management and tracking of your digital assets. With this app, you can monitor your crypto portfolio in real-time, stay up-to-date with the latest prices, and review your transaction history.",
+    technologiesUsed:
+      "VueJS/ NuxtJS & Strapi & Axios & SCSS & Bootstrap & Responsive & Swiper & i18n ",
+    img: "https://suzanbulbul.github.io/my-projects/assets/img/wofdex-img.png",
+    liveURL: "https://wofdex.com/tr/",
+  },
+  {
     title: "Feel Track",
     description:
       "FeelTrack is an application that allows users to record their daily emotional states and visualize them with monthly and yearly graphs. This platform provides a user-friendly tool for tracking and improving emotional well-being.",
@@ -31,15 +40,6 @@ const projects = [
     img: "https://suzanbulbul.github.io/my-projects/assets/img/invoice-img.png",
     liveURL: "https://invoice-project-nextjs.vercel.app/",
     githubRepository: "https://github.com/suzanbulbul/invoice-project-nextjs",
-  },
-  {
-    title: "Wofdex Cripto",
-    description:
-      "Wofdex, developed during my first job experience, is a user-friendly crypto application designed for easy management and tracking of your digital assets. With this app, you can monitor your crypto portfolio in real-time, stay up-to-date with the latest prices, and review your transaction history.",
-    technologiesUsed:
-      "VueJS/ NuxtJS & Strapi & Axios & SCSS & Bootstrap & Responsive & Swiper & i18n ",
-    img: "https://suzanbulbul.github.io/my-projects/assets/img/wofdex-img.png",
-    liveURL: "https://wofdex.com/tr/",
   },
   {
     title: "Movies Project",
